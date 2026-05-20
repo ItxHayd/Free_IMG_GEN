@@ -65,6 +65,8 @@ UPSTASH_REDIS_REST_TOKEN=your_upstash_token
 VITE_GOOGLE_CLIENT_ID=your_google_oauth_client_id
 
 CLOUDFLARE_AI_TOKEN=your_cloudflare_token
+
+WORKER_URL = your_cloudflare-worker_url
 ```
 
 ---
