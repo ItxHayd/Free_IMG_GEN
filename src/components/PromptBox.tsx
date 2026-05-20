@@ -4,6 +4,8 @@ import toast from 'react-hot-toast';
 import { useRateLimit } from './RateLimitProvider.tsx';
 
 function PromptBox(){
+    const WORKER_URL = import.meta.env.WORKER_URL;
+
 
     const {setIsRateLimited}= useRateLimit();
 
@@ -23,11 +25,11 @@ function PromptBox(){
         setDisabled(true);
         setLoading(true);
 
-        const response = await fetch("https://img-gen.hayd.workers.dev",{
+        const response = await fetch(WORKER_URL,{
             method:"POST",
             headers:{
                 "Content-Type": "application/json",
-                "Authorization": "Bearer 12345678"
+                "Authorization": "Bearer 12345678" //i know it shouldn't be here.thank u!
             },
             body:JSON.stringify({prompt: text})
 
